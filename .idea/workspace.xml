@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="49a374ed-d7ff-4f30-98e8-6c3d4e699917" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qa-project" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Greetz/Greetz.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/Greetz/Greetz.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TEST/Selenium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TEST/Selenium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +31,14 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
+                    <option name="branchName" value="QA2" />
+                    <option name="lastUsedInstant" value="1620397475" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="NEW2" />
+                    <option name="lastUsedInstant" value="1620397303" />
+                  </RecentBranch>
+                  <RecentBranch>
                     <option name="branchName" value="NEW" />
                     <option name="lastUsedInstant" value="1620221259" />
                   </RecentBranch>
@@ -47,10 +49,6 @@
                   <RecentBranch>
                     <option name="branchName" value="master" />
                     <option name="lastUsedInstant" value="1620220476" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="QA" />
-                    <option name="lastUsedInstant" value="1620214132" />
                   </RecentBranch>
                 </list>
               </option>
