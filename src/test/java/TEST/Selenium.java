@@ -61,6 +61,8 @@ public class Selenium {
         softAssert.assertAll();
         driver.quit();
     }
+    // search resultFunction
+
     public static boolean ignoreCase(String result1, String result2)
     {
         return result1.toLowerCase().contains(result2.toLowerCase());
