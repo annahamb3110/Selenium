@@ -6,22 +6,27 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.testng.thread.IThreadWorkerFactory;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Random;
 
 public class Greetz {
     private WebDriver driver;
-    @BeforeClass
+   private static WebDriverWait wait;
+
+ @BeforeClass
     public void Login() throws InterruptedException {
 
         System.setProperty("webdriver.chrome.driver",
                 "src\\main\\resources\\chromedriver.exe");
         driver = new ChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, 20);
+        wait = new WebDriverWait(driver, 30);
         driver.manage().window().maximize();
         driver.get("https://www.greetz.nl/auth/login");
 
@@ -37,38 +42,74 @@ public class Greetz {
         WebElement loginClickElement = wait.until(ExpectedConditions.elementToBeClickable(loginClick));
         loginClickElement.click();
 
-
     }
 @Test
 public void Testing()
 {
 
     driver.get("https://www.greetz.nl/bloemen/gemengde-boeketten");
-    WebDriverWait wait = new WebDriverWait(driver, 20);
+    WebDriverWait wait = new WebDriverWait(driver, 30);
+
     By productsElems = By.xpath("//*[@class='b-products-grid__item']");
-    wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(productsElems, 20));
-    List<WebElement> productsElements = driver.findElements(productsElems);
+    List<WebElement> productsElements = wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(productsElems, 15));
     WebElement element = getRandomElement(productsElements);
-    element.click();
+     element.click();
+    By favoriteStar = By.cssSelector(".page-detail__favorite");
+    WebElement favoriteStarElement = wait.until(ExpectedConditions.elementToBeClickable(favoriteStar));
+    favoriteStarElement.click();
 
-    By starIcon = By.cssSelector(".b-favourite");
-    WebElement favoriteStar = element.findElement(starIcon);
-    WebElement favoriteStarPage = wait.until(ExpectedConditions.elementToBeClickable(favoriteStar));
-    favoriteStarPage.click();
 
-    By productName = By.cssSelector(".b-products-grid__item-title");
-    WebElement productNameFront = element.findElement(productName);
-    WebElement prodNameFront = wait.until(ExpectedConditions.visibilityOf(productNameFront));
-    String prodName = prodNameFront.getText();
-    System.out.println(prodName);
+
+
+    By prodName1=By.xpath("//div[@class='b-products-grid__item-title']");
+    WebElement prodNameElement1=wait.until(ExpectedConditions.visibilityOfElementLocated(prodName1));
+    System.out.println(prodNameElement1.getText());
+
+    By price1=By.xpath("//*[@data-qa-ref='current-price']");
+    WebElement priceElement1=wait.until(ExpectedConditions.visibilityOfElementLocated(price1));
+    System.out.println(priceElement1.getText());
+
+    WebElement productPrice1;
+    try {
+        productPrice1 = element.findElement(By.xpath("//*[@data-qa-ref='current-price']"));
+    } catch (NoSuchElementException e) {
+        productPrice1 = element.findElement(By.xpath("//*[data-qa-ref='normal-price']"));
+    }
+    System.out.println(productPrice1);
+
+
+   By prodNameFav= By.xpath("//*[@name='productAmountForm']//h1");
+     WebElement prodNameElement=wait.until(ExpectedConditions.visibilityOfElementLocated(prodNameFav));
+     System.out.println(prodNameElement.getText());
+
+    WebElement favDetailsPrice;
+    try {
+        favDetailsPrice = driver.findElement(By.cssSelector("[data-qa-ref=current-price]"));
+    } catch (NoSuchElementException e) {
+        favDetailsPrice = driver.findElement(By.cssSelector("[data-qa-ref=normal-price]"));
+    }
+
+    System.out.println(favDetailsPrice.getText());
+    By price=By.xpath("//*[@data-qa-ref='normal-price']");
+     WebElement priceElement=wait.until(ExpectedConditions.visibilityOfElementLocated(price));
+     System.out.println(priceElement.getText());
+
+
+    Assert.assertEquals(prodNameElement1, prodNameElement, "The product name does not match:") ;
+    Assert.assertEquals(productPrice1,  favDetailsPrice, "The price does not match:") ;
+    System.out.println("Test Succeed");
+
 
 }
+
+
+
     public WebElement getRandomElement(List<WebElement> list) {
         Random rand = new Random();
         return list.get(rand.nextInt(list.size()));
     }
-  @AfterClass
-   public void logOut() throws InterruptedException {
+   @AfterClass
+ public void logOut() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         By login = By.cssSelector("[data-qa-ref=profile-icon]");
         WebElement loginElement = wait.until(ExpectedConditions.elementToBeClickable(login));
@@ -79,6 +120,5 @@ public void Testing()
         driver.quit();
     }
 
-
-
   }
+

@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="49a374ed-d7ff-4f30-98e8-6c3d4e699917" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Greetz/Greetz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Greetz/Greetz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Greetz/Greetz.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +33,10 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
+                    <option name="branchName" value="SELENIUMTEST" />
+                    <option name="lastUsedInstant" value="1620398317" />
+                  </RecentBranch>
+                  <RecentBranch>
                     <option name="branchName" value="QA2" />
                     <option name="lastUsedInstant" value="1620397475" />
                   </RecentBranch>
@@ -45,10 +51,6 @@
                   <RecentBranch>
                     <option name="branchName" value="NewBranch" />
                     <option name="lastUsedInstant" value="1620221080" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1620220476" />
                   </RecentBranch>
                 </list>
               </option>
@@ -110,6 +112,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Greetz.testProductDetailsWithFavorite" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Greetz.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Greetz" />
+      <option name="MAIN_CLASS_NAME" value="Greetz.Greetz" />
+      <option name="METHOD_NAME" value="testProductDetailsWithFavorite" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Selenium.Testing" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SeleniumTest" />
       <extension name="coverage">
@@ -131,6 +151,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.Greetz.Testing" />
+        <item itemvalue="TestNG.Greetz.testProductDetailsWithFavorite" />
         <item itemvalue="TestNG.Greetz" />
         <item itemvalue="TestNG.Selenium.Testing" />
       </list>
@@ -164,16 +185,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Greetz/Greetz.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="1" />
+          <line>104</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Greetz/Greetz.java</url>
-          <line>42</line>
-          <properties class="Greetz.Greetz" method="Testing">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="2" />
+          <line>47</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
